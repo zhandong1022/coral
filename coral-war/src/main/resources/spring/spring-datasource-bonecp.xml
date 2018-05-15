@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dataSource"  class="com.jolbox.bonecp.BoneCPDataSource"  destroy-method="close">
+        <!-- Connection Info -->
+        <property name="driverClass" value="${jdbc.driverClass}" />
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="partitionCount" value="${jdbc.partitionCount}" />
+        <property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
+        <property name="minConnectionsPerPartition" value="${jdbc.minConnectionsPerPartition}" />
+        <property name="maxConnectionsPerPartition" value="${jdbc.maxConnectionsPerPartition}" />
+        <property name="statementsCacheSize" value="${jdbc.statementsCacheSize}" />
+        <property name="releaseHelperThreads" value="${jdbc.releaseHelperThreads}" />
+        <property name="idleConnectionTestPeriodInMinutes" value="${jdbc.idleConnectionTestPeriodInMinutes}" />
+        <property name="idleMaxAgeInMinutes" value="${jdbc.idleMaxAgeInMinutes}" />
+        <property name="connectionTimeoutInMs" value="${connectionTimeoutInMs}" />
+        <property name="closeConnectionWatchTimeoutInMs" value="${closeConnectionWatchTimeoutInMs}" />
+        <property name="defaultAutoCommit" value="true" />
+        <property name="connectionTestStatement" value="/* ping */ SELECT 1"/>
+    </bean>
+
+</beans>
