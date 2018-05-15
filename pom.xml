@@ -12,6 +12,7 @@
         <module>coral-web</module>
         <module>coral-service</module>
         <module>coral-war</module>
+        <module>coral-api</module>
     </modules>
 
     <profiles>
